@@ -62,6 +62,7 @@ class Form extends Component {
                     
                     <label>Choose your date of birth: </label>
                     <NewDropDown/>
+                    <br/>
                     <input type="submit" value="Submit"/>
                 </form>
             </div>

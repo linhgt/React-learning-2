@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import DropDownItem from '../DropDownItem/DropDownItem.jsx';
 
 export default function NewDropDown(props){
