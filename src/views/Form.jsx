@@ -81,8 +81,8 @@ class Form extends Component {
                 <br/>
                 
                 <label>Choose your year of birth: </label>
-                <input type="text" list="birth-years" id="years"/>
-                <NewDropDown value={this.state.year} onChange={this.handleYearChange}/>
+                <input type="text" list="birth-years" id="years" onChange={this.handleYearChange}/>
+                <NewDropDown value={this.state.year}/>
                 <br/>
 
                 <input id="submit-button" type="submit" value="Submit"/>
