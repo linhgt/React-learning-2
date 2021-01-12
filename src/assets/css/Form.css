@@ -1,0 +1,15 @@
+#forms input{
+    width:30%;
+    height:30px;
+}
+
+#years{
+    padding:2px;
+    margin-left:10px;
+    height:30px;
+    width:70px !important;
+}
+
+#submit-button{
+    width:auto !important;
+}

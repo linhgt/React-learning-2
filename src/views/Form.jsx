@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import NewDropDown from 'components/NewDropDown/NewDropDown.jsx';
+import "../assets/css/Form.css";
 
 class Form extends Component {
     constructor(props)
@@ -13,7 +14,17 @@ class Form extends Component {
         };
     }
 
-    handleUsernameChange = (event)=>{
+    handleInputChange = (event) => {
+        const target = event.target;
+        const value = target.type === 'checked' ? target.checked : target.value;
+        const name = target.name;
+
+        this.setState({
+            [name]: value
+        });
+    }
+
+    /*handleUsernameChange = (event)=>{
         this.setState({
             username:event.target.value
         });
@@ -29,7 +40,7 @@ class Form extends Component {
         this.setState({
             address:event.target.value
         });  
-    };
+    }; */
 
     handleYearChange = (event) =>{
         this.setState({
@@ -45,36 +56,37 @@ class Form extends Component {
 
     render(){
         return(
-            <div>
-                <form onSubmit={this.handleSubmit}>
-                    <label>
-                        username:
-                        <input type="text" name="username" value={this.state.username} onChange={this.handleUsernameChange}/>
-                    </label>
-                    <br/>
+            <form onSubmit={this.handleSubmit} id="forms">
+                <label>
+                    Full Name:
+                </label>
+                <br/>
+                <input type="text" name="username" value={this.state.username} onChange={this.handleInputChange}/>
+                <br/>
 
-                    <label>
-                        password:
-                        <input type="text" name="password" value={this.state.password} onChange={this.handlePasswordChange}/>
-                    </label>
-                    <br/>
+                <label>
+                    Alias:
+                </label>
+                <br/>
+                <input type="text" name="password" value={this.state.password} onChange={this.handleInputChange}/>
+                <br/>
 
-                    <label>
-                        Address:
-                    </label>
-                    <br/>
-                    <textarea rows="5" cols ="60" name="Address" 
-                        value={this.state.address} onChange={this.handleAddressChange}>
-                    </textarea>
-                    <br/>
-                    
-                    <label>Choose your date of birth: </label>
-                    <NewDropDown value={this.state.year} onChange={this.handleYearChange}/>
-                    <br/>
+                <label>
+                    Address:
+                </label>
+                <br/>
+                <textarea rows="5" cols ="60" name="address" 
+                    value={this.state.address} onChange={this.handleInputChange}>
+                </textarea>
+                <br/>
+                
+                <label>Choose your year of birth: </label>
+                <input type="text" list="birth-years" id="years"/>
+                <NewDropDown value={this.state.year} onChange={this.handleYearChange}/>
+                <br/>
 
-                    <input type="submit" value="Submit"/>
-                </form>
-            </div>
+                <input id="submit-button" type="submit" value="Submit"/>
+            </form>
         );
     }
 }
