@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import NewDropDown from 'components/NewDropDown/NewDropDown.jsx';
 
 class Form extends Component {
     constructor(props)
@@ -60,10 +61,7 @@ class Form extends Component {
                     <br/>
                     
                     <label>Choose your date of birth: </label>
-                    <select name="date">
-                        
-                    </select>
-
+                    <NewDropDown/>
                     <input type="submit" value="Submit"/>
                 </form>
             </div>
