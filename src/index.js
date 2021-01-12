@@ -1,5 +1,5 @@
 
-* Product Page: https://www.creative-tim.com/product/light-bootstrap-dashboard-react
+/* Product Page: https://www.creative-tim.com/product/light-bootstrap-dashboard-react
 * Copyright 2019 Creative Tim (https://www.creative-tim.com)
 * Licensed under MIT (https://github.com/creativetimofficial/light-bootstrap-dashboard-react/blob/master/LICENSE.md)
 
@@ -33,19 +33,3 @@ ReactDOM.render(
   </BrowserRouter>,
   document.getElementById("root")
 );
-=======
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import FirstStarter from './FirstStarter';
-
-ReactDOM.render(
-      <App/>,
-    document.getElementById('root')
-  );
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
