@@ -1,3 +1,4 @@
+import { ppid } from 'process';
 import React from 'react';
 import DropDownItem from '../DropDownItem/DropDownItem.jsx';
 
@@ -6,11 +7,11 @@ export default function NewDropDown(props){
 
     for(let i = 1900; i <= 2030; i++)
     {
-        listOfYears.push(<DropDownItem year={i}/>);
+        listOfYears.push(<DropDownItem key={i} year={i}/>);
     }
 
     return(
-        <select name="years" id ="birth-years">
+        <select name="years" id ="birth-years" value={props.value} onChange={props.onChange}>
             {listOfYears}
         </select>
     );

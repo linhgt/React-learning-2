@@ -9,6 +9,7 @@ class Form extends Component {
             username:"",
             password:"",
             address:"",
+            year:"",
         };
     }
 
@@ -30,8 +31,15 @@ class Form extends Component {
         });  
     };
 
+    handleYearChange = (event) =>{
+        this.setState({
+            year:event.target.value
+        });
+    };
+
     handleSubmit = (event) =>{
         console.log("the new username is: " + this.state.username + " and the new password is: "+ this.state.password);
+        console.log("the address is: " + this.state.address + " and the birth year is: " + this.state.year);
         event.preventDefault();
     }
 
@@ -61,8 +69,9 @@ class Form extends Component {
                     <br/>
                     
                     <label>Choose your date of birth: </label>
-                    <NewDropDown/>
+                    <NewDropDown value={this.state.year} onChange={this.handleYearChange}/>
                     <br/>
+
                     <input type="submit" value="Submit"/>
                 </form>
             </div>
