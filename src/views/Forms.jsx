@@ -114,10 +114,18 @@ class Forms extends Component {
                                 <CustomInput 
                                     type="checkbox" 
                                     value={item.id} 
+                                    key={item.id}
+                                    id={`checkbox-${item.id}`}
                                     label={item.value} 
                                     onChange={this.handleCheckBoxes}/>
                             ))
                         }
+                    </FormGroup>
+                </div>
+
+                <div>
+                    <FormGroup id="radios">
+                        
                     </FormGroup>
                 </div>
                 
