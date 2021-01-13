@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import NewDropDown from 'components/NewDropDown/NewDropDown.jsx';
-import "../assets/css/Form.css";
+import "../assets/css/Forms.css";
+import {Form, FormGroup, Label, Input, CustomInput} from 'reactstrap';
 
-class Form extends Component {
+class Forms extends Component {
     constructor(props)
     {
         super(props);
@@ -11,17 +12,31 @@ class Form extends Component {
             password:"",
             address:"",
             year:"",
+            gender:"",
+            personality:[
+                {id:1, value:"Independence"},
+                {id:2, value:"Teamwork"},
+                {id:3, value:"Extremely proud"},
+                {id:4, value:"Goofy"}
+            ],
+            checkedItems:new Map()
         };
     }
 
     handleInputChange = (event) => {
         const target = event.target;
-        const value = target.type === 'checked' ? target.checked : target.value;
+        const value = target.value;
         const name = target.name;
 
         this.setState({
             [name]: value
         });
+    }
+
+    handleCheckBoxes = (event) => {
+        let isChecked = event.target.checked;
+        let value = event.target.value;
+        this.setState(prevState => ({ checkedItems: prevState.checkedItems.set(value, isChecked) }));
     }
 
     /*handleUsernameChange = (event)=>{
@@ -51,6 +66,17 @@ class Form extends Component {
     handleSubmit = (event) =>{
         console.log("the new username is: " + this.state.username + " and the new password is: "+ this.state.password);
         console.log("the address is: " + this.state.address + " and the birth year is: " + this.state.year);
+        console.log("the gender is: " + this.state.gender);
+        console.log("The personality is: ");
+        for(let i = 0; i < this.state.personality.length; i++)
+        {
+            let checkedItems = this.state.checkedItems;
+            let personalityId = this.state.personality[i].id.toString();
+            if(checkedItems.get(personalityId))
+            {
+                console.log(this.state.personality[i].value);
+            }
+        }
         event.preventDefault();
     }
 
@@ -75,15 +101,32 @@ class Form extends Component {
                     Address:
                 </label>
                 <br/>
-                <textarea rows="5" cols ="60" name="address" 
+                <textarea rows="5" cols ="50" name="address" 
                     value={this.state.address} onChange={this.handleInputChange}>
                 </textarea>
                 <br/>
+
+                <div>
+                    <FormGroup id="checkboxes">
+                        <Label for="exampleCheckbox">What kinds of personality do you have</Label>
+                        {
+                            this.state.personality.map(item =>(
+                                <CustomInput 
+                                    type="checkbox" 
+                                    value={item.id} 
+                                    label={item.value} 
+                                    onChange={this.handleCheckBoxes}/>
+                            ))
+                        }
+                    </FormGroup>
+                </div>
                 
                 <label>Choose your year of birth: </label>
                 <input type="text" list="birth-years" id="years" onChange={this.handleYearChange}/>
                 <NewDropDown value={this.state.year}/>
                 <br/>
+
+                
 
                 <input id="submit-button" type="submit" value="Submit"/>
             </form>
@@ -91,4 +134,14 @@ class Form extends Component {
     }
 }
 
-export default Form;
+/*<label>What is your gender:</label>
+                <br/>
+                <div id="checkboxes">
+                    <input type="checkbox" name = "male" value="male"/>
+                    <label htmlFor="male">Male</label>
+                    <input type="checkbox" name = "female" value="female"/>
+                    <label htmlFor="female">Female</label>
+                </div>
+                <br/>*/
+
+export default Forms;

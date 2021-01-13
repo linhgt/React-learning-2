@@ -1,5 +1,5 @@
 #forms input{
-    width:30%;
+    width:380.8px;
     height:30px;
 }
 
@@ -12,4 +12,13 @@
 
 #submit-button{
     width:auto !important;
+}
+
+#checkboxes input{
+    width:15px !important;
+    height:15px;
+}
+
+#checkboxes label{
+    padding:0px 15px 5px 0px;
 }

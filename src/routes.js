@@ -25,7 +25,7 @@ import Notifications from "views/Notifications.jsx";
 import Upgrade from "views/Upgrade.jsx";
 import Login from "views/Login.jsx";
 import HelloWorld from "views/HelloWorld.jsx";
-import Form from "views/Form.jsx";
+import Forms from "views/Forms.jsx";
 
 const dashboardRoutes = [
   {
@@ -101,9 +101,9 @@ const dashboardRoutes = [
   },
   {
     path: "/form",
-    name: "Form",
+    name: "Forms",
     icon: "",
-    component: Form,
+    component: Forms,
     layout: "/admin"
   }
 ];
