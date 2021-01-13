@@ -20,5 +20,19 @@
 }
 
 #checkboxes label{
-    padding:0px 15px 5px 0px;
+    padding:0px 15px 2px 0px;
+}
+
+
+#radios input{
+    width:15px !important;
+    height:15px;
+}
+
+#radios .custom-control-label{
+    margin-right: 15px;
+}
+
+#radios .custom-radio{
+    display:inline;
 }

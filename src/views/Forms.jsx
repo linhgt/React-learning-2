@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import NewDropDown from 'components/NewDropDown/NewDropDown.jsx';
 import "../assets/css/Forms.css";
-import {Form, FormGroup, Label, Input, CustomInput} from 'reactstrap';
+import {Form, FormGroup, Label, Input, CustomInput, FormText} from 'reactstrap';
 
 class Forms extends Component {
     constructor(props)
@@ -13,6 +13,8 @@ class Forms extends Component {
             address:"",
             year:"",
             gender:"",
+            age:"",
+            file:"",
             personality:[
                 {id:1, value:"Independence"},
                 {id:2, value:"Teamwork"},
@@ -77,6 +79,9 @@ class Forms extends Component {
                 console.log(this.state.personality[i].value);
             }
         }
+        console.log("The gender is: " + this.state.gender);
+        console.log("The age is: " + this.state.age);
+        console.log("The file chosen is: " + this.state.file);
         event.preventDefault();
     }
 
@@ -105,6 +110,7 @@ class Forms extends Component {
                     value={this.state.address} onChange={this.handleInputChange}>
                 </textarea>
                 <br/>
+                <br/>
 
                 <div>
                     <FormGroup id="checkboxes">
@@ -124,8 +130,12 @@ class Forms extends Component {
                 </div>
 
                 <div>
-                    <FormGroup id="radios">
-                        
+                    <FormGroup >
+                        <Label>What is your gender:</Label>
+                        <div id="radios">
+                            <CustomInput type="radio" id="male" value="male" onChange={this.handleInputChange} name="gender" label="Male"/>
+                            <CustomInput type="radio" id="female" value="female" onChange={this.handleInputChange} name="gender" label="Female"/>
+                        </div>
                     </FormGroup>
                 </div>
                 
@@ -134,7 +144,20 @@ class Forms extends Component {
                 <NewDropDown value={this.state.year}/>
                 <br/>
 
-                
+                <div>
+                    <FormGroup>
+                        <Label for="Age">Age</Label>
+                        <Input type="range" name="age" id="Age" min="20" max="30" onChange = {this.handleInputChange}/>
+                    </FormGroup>
+                </div>
+
+                <FormGroup>
+                    <Label for="File">File</Label>
+                    <Input type="file" name="file" id="File" onChange={this.handleInputChange}/>
+                    <FormText color="muted">
+                        Choose A file
+                    </FormText>
+                </FormGroup>
 
                 <input id="submit-button" type="submit" value="Submit"/>
             </form>
