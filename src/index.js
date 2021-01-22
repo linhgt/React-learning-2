@@ -22,13 +22,13 @@ import "./assets/css/demo.css";
 import "./assets/css/pe-icon-7-stroke.css";
 
 import AdminLayout from "layouts/Admin.jsx";
-import Login from "./views/Login";
+import Login from "./views/Login.jsx";
 
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
       <Route path="/admin" render={props => <AdminLayout {...props} />} />
-      <Redirect from="/" to="/admin/dashboard"/>
+      <Route exact path="/" component={Login}/>
     </Switch>
   </BrowserRouter>,
   document.getElementById("root")
