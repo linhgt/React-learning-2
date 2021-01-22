@@ -1,5 +1,6 @@
 import React from 'react';
 import '../assets/css/Login.css';
+import CustomButton from '../components/CustomButton/CustomButton.jsx';
 
 
  class Login extends React.Component{
@@ -16,20 +17,22 @@ import '../assets/css/Login.css';
     handleSubmit(event){
         this.props.history.push("/admin/dashboard");
         event.preventDefault();
+        console.log(this.props);
     }
 
     render()
     {
         return(
-            <div class="wrapper">
+            <div className="wrapper">
                 <form onSubmit={this.handleSubmit}>
-                    <label for="uname"><b>Username</b></label>
+                    <h1>Log In</h1>
+                    <label htmlFor="uname"><b>Username</b></label>
                     <input type="text" placeholder="Enter Username" name="uname" required/>
 
-                    <label for="psw"><b>Password</b></label>
+                    <label htmlFor="psw"><b>Password</b></label>
                     <input type="password" placeholder="Enter Password" name="psw" required/>
 
-                    <button type="submit" >Login</button>
+                    <CustomButton id="login-button" type="submit" bsStyle = "primary" className="btn-fill btn-block">Login</CustomButton>
                     <label>
                     </label>
                 </form>
