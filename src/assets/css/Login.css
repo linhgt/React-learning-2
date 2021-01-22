@@ -2,9 +2,27 @@ html, body{
     height:100%;
 }
 
+.wrapper{
+    background-color:lightgrey;
+}
+
 /* Bordered form */
 form {
-    border: 3px solid #f1f1f1;
+    border: 1px solid black;
+    width: 25%;
+    height:60%;
+    padding: 40px;
+    position:absolute;
+    border-radius:25px;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    background-color:white;
+}
+
+form h1{
+    text-align:center ;
 }
 
 /* Full-width inputs */
@@ -65,11 +83,11 @@ padding-top: 16px;
 
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 300px) {
-span.psw {
-    display: block;
-    float: none;
-}
-.cancelbtn {
-    width: 100%;
-}
+    span.psw {
+        display: block;
+        float: none;
+    }
+    .cancelbtn {
+        width: 100%;
+    }
 }
