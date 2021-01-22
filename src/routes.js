@@ -19,6 +19,9 @@ import Dashboard from "views/Dashboard.jsx";
 import Login from "views/Login.jsx";
 import HelloWorld from "views/HelloWorld.jsx";
 import Forms from "views/Forms.jsx";
+import UserCard from "components/UserCard/UserCard";
+import UserList from "views/UserList.jsx";
+import User from 'components/Users/User.jsx';
 
 const dashboardRoutes = [
   {
@@ -26,13 +29,6 @@ const dashboardRoutes = [
     name: "Dashboard",
     icon: "pe-7s-graph",
     component: Dashboard,
-    layout: "/admin"
-  },
-  {
-    path: "/login",
-    name: "Log ins",
-    icon: "",
-    component: Login,
     layout: "/admin"
   },
   {
@@ -47,6 +43,13 @@ const dashboardRoutes = [
     name: "Forms",
     icon: "",
     component: Forms,
+    layout: "/admin"
+  },
+  {
+    path: "/userslist",
+    name: "Users List",
+    icon: "",
+    component: User,
     layout: "/admin"
   }
 ];
