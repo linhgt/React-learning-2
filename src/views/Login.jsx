@@ -24,7 +24,7 @@ import CustomButton from '../components/CustomButton/CustomButton.jsx';
     {
         return(
             <div className="wrapper">
-                <form onSubmit={this.handleSubmit}>
+                <form id="login-form" onSubmit={this.handleSubmit}>
                     <h1>Log In</h1>
                     <label htmlFor="uname"><b>Username</b></label>
                     <input type="text" placeholder="Enter Username" name="uname" required/>

@@ -3,6 +3,7 @@ import UserCard from '../UserCard/UserCard.jsx';
 import Face from "../../assets/img/faces/face-1.jpg";
 import Background from '../../assets/img/sidebar-5.jpg';
 import CustomButton from '../CustomButton/CustomButton.jsx';
+import {Link} from 'react-router-dom';
 
 function UserPage(props){
     const location = props.location.state;
@@ -20,7 +21,9 @@ function UserPage(props){
                 `Age : ${location.age}\nBirth: ${location.birth}\nAddress:${location.address}`
             }
             />
-            <CustomButton onClick={()=>props.history.push('/admin/userslist')}>go back</CustomButton>
+            <CustomButton>
+                <Link to="/admin/userslist">go back</Link>
+            </CustomButton>
         </div>
     )
 }
